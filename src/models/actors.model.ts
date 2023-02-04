@@ -24,12 +24,12 @@ export default class ActorsModel extends Model {
   declare nationality: string;
 
   //
-  @Field(() => [MoviesModel])
+  @Field(() => MoviesModel)
   @ForeignKey(() => MoviesModel)
   // @Column
   declare moviesId: any;
 
-  @Field(() => [MoviesModel])
+  @Field(() => MoviesModel)
   @BelongsTo(() => MoviesModel)
   declare movies: MoviesModel[];
 }

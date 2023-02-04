@@ -7,8 +7,8 @@ type ActorsModel {
   actorsId: ID!
   firstName: String!
   lastName: String!
-  movies: [MoviesModel!]!
-  moviesId: [MoviesModel!]!
+  movies: MoviesModel!
+  moviesId: MoviesModel!
   nationality: String!
 }
 
@@ -35,7 +35,7 @@ input InputActors {
 }
 
 input InputMovies {
-  moviesId: ID
+  moviesId: ID!
   rating: String
   releaseYears: String
   tittle: String
@@ -43,7 +43,7 @@ input InputMovies {
 
 type MoviesModel {
   UpdatedAt: DateTime!
-  actors: ActorsModel!
+  actors: [ActorsModel!]!
   createdAt: DateTime!
   moviesId: ID!
   rating: String!

@@ -13,8 +13,8 @@ export default class MoviesModel extends Model {
   declare moviesId: any;
 
   // movies has many actor's //
-  @Field((type) => ActorsModel)
-  @HasMany(() => ActorsModel, { as: "actors" })
+  @Field(() => [ActorsModel!])
+  @HasMany(() => ActorsModel)
   declare actors: ActorsModel[];
 
   @Field()

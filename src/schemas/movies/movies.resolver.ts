@@ -7,7 +7,7 @@ import InputMovies from "./input.movies";
 export default class MoviesResolver {
   @Query(() => [MoviesModel])
   async getMovies() {
-    let res = await MoviesModel.findOne({ include: [ActorsModel] });
+    let res = await MoviesModel.findAll({ include: ActorsModel });
 
     return res;
   }

@@ -1,8 +1,9 @@
 import { InputType, Field, ID } from "type-graphql";
+import ActorsModel from "../../models/actors.model";
 
 @InputType()
 export default class InputMovies {
-  @Field(() => ID, { nullable: true })
+  @Field(() => ID)
   declare moviesId?: string;
 
   @Field({ nullable: true })
@@ -13,7 +14,4 @@ export default class InputMovies {
 
   @Field({ nullable: true })
   declare rating: string;
-
-  // @Field((type) => ActorsModel)
-  // declare actors: ActorsModel;
 }
